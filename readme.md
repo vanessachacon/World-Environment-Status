@@ -6,8 +6,8 @@ The aim of this web application is to practice proper recycling. Currently the a
 
 ## Features (User stories):
 
->As a **citizen**, I want to **sort** what can and can't be recycled so I can seperate my trash correctly and responsibly.  
->As a **customer**, I want to **know** what to do with non recyclable products so that I am not fined. 
+>As a **citizen**, I want to **sort** what can and can't be recycled so I can seperate my trash correctly and responsibly. 
+>As a **customer**, I want to **know** what to do with non recyclable products so that I am not fined.  
 >As a **business**, I want my customers to follow rules accordingly to maximize potential profits and cut down costs **by tracking what items customers are confused about.**  
 >As an **environmentalist**, I want clean streets, water, and air. If everybody is **educated about "reduce, reuse, and recycle" our carbon footprint can be reduced.**  
 >As a **business**, I want to **help customers dispose of items their waste disposal company cannot to help my company generate business** (ie Ridwell)  
