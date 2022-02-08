@@ -17,8 +17,10 @@ The aim of this web application is to practice proper recycling. Currently the a
 > 
 
 >As a **business**, I want to **help customers dispose of items their waste disposal company cannot to help my company generate business** (ie Ridwell)  
+
 > 
 >As a **customer**, I want a reliable way to **determine what to do with discarded items and alternatives if I can't recycle or dispose of items normally.**   
+
 > 
 >As a **city**, we want citizens to dipose of items properly to  minimize landfill waste by **providing adequate disposal services.**  
 
