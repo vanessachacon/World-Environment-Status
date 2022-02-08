@@ -41,22 +41,26 @@ The aim of this web application is to practice proper recycling. Currently the a
 
 ## Schema (Data Model):
 
->Recyclable 
-    -items 
-    -count 
->Garbage 
-    -items 
-    -count 
->Hazardous 
-    -items 
-    -count 
->Other 
-    -items 
-    -count 
->Most searched item 
-    -items 
-    -count 
-
+>Recyclable  
+    -items  
+    -count  
+>
+>Garbage  
+    -items  
+    -count  
+>
+>Hazardous  
+    -items  
+    -count  
+>
+>Other  
+    -items  
+    -count  
+>
+>Most searched item  
+    -items  
+    -count  
+>
 >items/ count (separately ?) 
 
 
