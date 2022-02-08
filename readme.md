@@ -14,7 +14,7 @@ As a **business**, I want to **help customers dispose of items their waste dispo
 As a **customer**, I want a reliable way to **determine what to do with discarded items and alternatives if I can't recycle or dispose of items normally.** 
 As a **city**, we want citizens to dipose of items properly to  minimize landfill waste by **providing adequate disposal services.**
 
-###Tasks:
+### Tasks:
 1. need to identify/filter which items are disposable, recyclable with corresponding to do lists (washed, lid thrown away, etc (possibly))
 
 2. click on links for garbage, recycle, hazardous items, alternate forms of disposal/contact info/ hazardous disposal days (ie paints, solvets, etc)        donation sites (clothing scrapts/etc @places like dog shelters etc.)
@@ -79,25 +79,25 @@ items(separately ?)
 
 ## Must/Should/Can/ Won't Haves
 
-###Essential features:
-Search capablity (by text)
-sorting feature of data into garbage, recyclable, etc
-images on each corresponding page with text/name of item in question
-white and green color layout/css
+### Essential features:
+- Search capablity (by text)
+- Sorting feature of data into garbage, recyclable, etc
+- Images on each corresponding page with text/name of item in question
+- White and green color layout/css
 
-###Really-great-to-haves:
-keep tabs on searches
-Generate chart of searches
-nice css on normal browser
+### Really-great-to-haves:
+- Keep tabs on searches
+- Generate chart of searches
+- Nice css on normal browser
 
-###Nice-to-haves:
-environmental inspo/education (imgur api/meme)
-image slide on homepage(bootsrap)
-alternate forms of disposal links/info
-seemless css in all kinds of devices
-search by image
+### Nice-to-haves:
+- Environmental inspo/education (imgur api/meme)
+- Image slide on homepage(bootsrap)
+- Alternate forms of disposal links/info
+- Seemless css in all kinds of devices
+- Search by image
 
-###won't have:
+### won't have:
 
-camera capture/recognition
-schedule of trash/recyle/ other pickup (already an app for that)
+- Camera capture/recognition
+- Schedule of trash/recyle/ other pickup (already an app for that)
