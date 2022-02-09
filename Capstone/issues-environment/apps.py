@@ -1,6 +1,6 @@
 from django.apps import AppConfig
 
 
-class RecycleConfig(AppConfig):
+class ConfigConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
-    name = 'recycle'
+    name = 'config'
