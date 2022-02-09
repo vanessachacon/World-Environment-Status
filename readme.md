@@ -1,6 +1,6 @@
 # Title: Global Environmental Issues Today 
 
-## Project Overview: 
+## Overview: 
 
 The aim of this web application is to quickly access information regarding environmental issues around the world. Currently while there is an abundance of information on environmental issues, there is no quick way to look up by country what those issues are or to identify which environmental hurdles any one country is specifically facing. 
 
