@@ -1,7 +1,7 @@
 from django.contrib import admin
-from .models import Country, Issue
+from .models import Countries, Issues
 
 
 
-admin.site.register(Country)
-admin.site.register(Issue)
+admin.site.register(Countries)
+admin.site.register(Issues)

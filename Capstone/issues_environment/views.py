@@ -1,5 +1,5 @@
 
-from .models import Country, Issue
+from .models import Countries, Issues
 
 from django.http import HttpResponse
 def index(request):
