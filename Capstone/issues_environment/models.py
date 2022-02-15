@@ -1,18 +1,19 @@
 from django.db import models
 
 
-class Countries(models.Model):
+class Country(models.Model):
     name = models.CharField(max_length=50)
-    issues = models.ManyToManyField('Issues')
+    issues = models.ManyToManyField('Issue')
 
     def __str__(self):
         return self.name
 
 
 
-class Issues (models.Model):
-    issues = models.CharField(max_length=50)
+class Issue (models.Model):
+    text = models.CharField(max_length=50)
+
 
     def __str__(self):
-        return self.issues
+        return self.text
 
