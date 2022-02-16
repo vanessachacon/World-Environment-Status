@@ -4,8 +4,6 @@ import json
 from issues_environment.models import Country, Issue
 
 
-
-
 class Command(BaseCommand):
     def handle(self,*args,**options):
         us_data_filepath = 'data/north-america/us.json'
