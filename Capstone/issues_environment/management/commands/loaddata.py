@@ -17,13 +17,14 @@ class Command(BaseCommand):
         us_data_filepath = 'data/north-america/us.json'
         with open(us_data_filepath, 'r', encoding='utf-8') as f:
             us_data = json.load(f)   
-        country_name=(us_data['Government']['Country name']['conventional short form']['text'])
-        
+        country_names=(us_data['Government']['Country name']['conventional short form']['text'])
+        for country_name in country_names:
+            country, _created = Country.objects.get_or_create(name = country_names)
+            print(country)
         # print(env_data)
         # create the country object
         # get the name out of the data
-        
-        print(country_name)
+     
             # country.issues.add(issue) pseudocode
 
 
