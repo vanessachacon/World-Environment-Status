@@ -10,6 +10,7 @@ body {
     background-color: #4273fa;
     padding: 0 20px 20px 20px;
     border: 5px solid rgb(206, 218, 102);
+    color: rgb(158, 9, 245)
   }
 div{
   display: flex;
@@ -18,7 +19,24 @@ div{
   /* width: 100px; */
   margin: 0 auto;
   background-color: #c7dfff;
-  padding: 0 10px 10px 10px;
+  padding: 10px 10px 10px 10px;
   border: 5px solid rgb(255, 255, 255);
 }
+p {
+  display: flex;
+  flex-direction: column;
+
+}
+
+img {
+  size:75%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+
+
+}
   
+footer{
+  color:azure
+}

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,22 +11,45 @@
 </head>
 <header>
     <h1>Global Environment</h1>
-</header>    
+</header>
+
 <body>
     <div>
-    <form id="input">
-        <input type = "text">
-        <button type = "submit">search</button>
-    </form>
+        <form id="input">
+            <input type="text">
+            <button type="submit">search</button>
+        </form>
     </div>
     <div>
         {% load static%}
         <img src="{% static 'issues_environment\worldmap.jpg' %}" alt="my image">
     </div>
 
-    <div></div>
+    <div>
 
-    
+            <p>
+                Intro: 
+                    The Global Environment is a website to help any interested person easily identify environmental issues around the world or environemental issues in any given country.
+            </p>
+        
+            <p>
+                Resources: 
+                    This project would not be possible without https://github.com/factbook and the CIA Worldfactbook.
+            </p>
+
+        
+        <br>
+
+    </div>
+
+
 
 </body>
+<footer>
+    <p>
+        Created By: V. Chacon for PDX Code Guild
+    </p>
+
+</footer>
+
 </html>
