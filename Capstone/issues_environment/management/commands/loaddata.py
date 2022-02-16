@@ -11,32 +11,29 @@ class Command(BaseCommand):
         us_data_filepath = 'data/north-america/us.json'
         with open(us_data_filepath, 'r', encoding='utf-8') as f:
             us_data = json.load(f)   
+        e_data=(us_data['Environment']['Environment - current issues']['text'])
+        env_data = (e_data.split('; '))
+        for issue_text in env_data:
+            issue, _created = Issue.objects.get_or_create(text = issue_text)
+            print(issue)
+
         country_names=(us_data['Government']['Country name']['conventional short form']['text'])
-        for country_name in country_names:
-            country, _created = Country.objects.get_or_create(name = country_names)
-            print(country)
+
+        country, _created = Country.objects.get_or_create(name = country_names)
+        print(country)
+        if _created:
+            self.stdout.write(f'{country_names} created')
+        country.issues.add()
+        country.save()
+        us_data_filepath = 'data/north-america/us.json'
+        with open(us_data_filepath, 'r', encoding='utf-8') as f:
+            us_data = json.load(f)   
+        e_data=(us_data['Environment']['Environment - current issues']['text'])
+        env_data = (e_data.split('; '))
+        for issue_text in env_data:
+            issue, _created = Issue.objects.get_or_create(text = issue_text)
+            print(issue)
             if _created:
-                self.stdout.write(f'{country_names} created')
-            country.issues.add()
-            country.save()
+                self.stdout.write(f'{issue} created')
+            country.issues.add(issue) 
 
-            # country.issues.add(issue) pseudocode
-
-
-# class Command(BaseCommand):
-#     def handle(self,*args,**options):
-#         factbook_path = 'career/factbook.json'
-#         with open(factbook_path, 'r', encoding='utf-8') as f:
-#             all_data = json.load(f)   
-#         # for country in countries:
-#         # all_data_filepath = 'data/north-america/sb.json'
-#         # with open(all_data_filepath, 'r', encoding='utf-8') as f:
-#         #     all_data = json.load(f)   
-#         print( all_data)
-    
-#         # create the country object
-#         # get the name out of the data    
-#             # country.issues.add(issue) pseudocode
-# 
-# {'Country name': {'conventional long form': {'text': 'Territorial Collectivity of Saint Pierre and Miquelon'}, 'conventional short form': {'text': 'Saint Pierre and Miquelon'}, 'local long form': {'text': 'Departement de Saint-Pierre et Miquelon'}, 'local short form': {'text': 'Saint-Pierre et Miquelon'}, 'etymology': {'text': 'Saint-Pierre is named after Saint PETER, the patron saint of fishermen; Miquelon may be a corruption of the Basque name Mikelon'}}, '
-# OR by ISO code?

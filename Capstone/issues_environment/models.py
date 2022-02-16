@@ -2,6 +2,9 @@ from django.db import models
 
 
 class Country(models.Model):
+    class Meta: 
+        verbose_name_plural = 'Countries'
+
     name = models.CharField(max_length=50)
     issues = models.ManyToManyField('Issue')
 
@@ -10,7 +13,7 @@ class Country(models.Model):
 
 
 
-class Issue (models.Model):
+class Issue(models.Model):
     text = models.CharField(max_length=50)
 
 
