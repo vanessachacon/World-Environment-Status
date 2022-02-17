@@ -6,48 +6,71 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     {% load static %}
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/modern-normalize@1.1.0/modern-normalize.min.css">
     <link rel="stylesheet" href="{% static 'issues_environment/styling.css' %}">
     <title>Global Environment</title>
+    <script src="https://unpkg.com/vue@next"></script>
 </head>
-<header>
-    <h1>Global Environment</h1>
-</header>
 
 <body>
-    <div>
-        <form id="input">
-            <input type="text">
-            <button type="submit">search</button>
-        </form>
-    </div>
-    <div>
-        {% load static%}
-        <img src="{% static 'issues_environment\worldmap.jpg' %}" alt="my image">
-    </div>
+    <header>
+        <h1>Global Environment</h1>
+    </header>
+    <div id="app">
 
-    <div>
+        <div>
+            <form>
+                {% csrf_token %}
+                <label for='searchEntry'> Please enter environmental issue or country name (short form ie "united
+                    states"):
+                    <input v-model="searchEntry" type="text" id="searchEntry">
+                    <button type="submit">search</button>
+                    [[message]]
+            </form>
+        </div>
+        <div>
+            {% load static%}
+            <img src="{% static 'issues_environment\worldmap.jpg' %}" alt="my image">
+        </div>
+
+        <div>
 
             <p>
-                Intro: 
-                    The Global Environment is a website to help any interested person easily identify environmental issues around the world or environemental issues in any given country.
-            </p>
-        
-            <p>
-                Resources: 
-                    This project would not be possible without https://github.com/factbook and the CIA Worldfactbook.
+                Intro:
+                The Global Environment is a website to help any interested person easily identify environmental issues
+                around the world or environemental issues in any given country.
             </p>
 
-        
-        <br>
+            <p>
+                Resources:
+                This project would not be possible without https://github.com/factbook and the CIA Worldfactbook.
+            </p>
+
+
+            <br>
+
+        </div>
+
 
     </div>
-
-
-
+    <script>
+        const App = {
+            delimiters: ['[[', ']]'],
+            data() {
+                return {
+                    message: 'Testing!!!',
+                }
+            },
+                methods: {
+    
+                },
+            }    
+                Vue.createApp(App).mount('#app')
+    </script>
 </body>
 <footer>
     <p>
-        Created By: V. Chacon for PDX Code Guild
+        Created by: <tab></tab> V. Chacon for PDX Code Guild
     </p>
 
 </footer>

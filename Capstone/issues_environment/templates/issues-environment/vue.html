@@ -1,9 +1,15 @@
 {% comment %} template inheritance-django {% endcomment %}
 <script>
     const App = {
+        delimiters: ['[[', ']]'],
         data() {
             return {
                 message: 'testing',
-                
             }
+        },
+            methods: {
+
+            },
+        }    
+            Vue.createApp(App).mount('#app')
 </script>
