@@ -1,32 +1,34 @@
 
 from .models import Country, Issue
+import json
 
-from django.http import HttpResponse
+from django.http import HttpResponse, JsonResponse
 from django.shortcuts import render,get_object_or_404
+
+from string import ascii_uppercase
+from random import choice
 
 def index(request):
     print("Hello")
     return render(request,'issues-environment/index.html')
 
+def get_info(request):
+    countries = []
+    for country in Country.objects.all():
+        print(country)
+        country_dict = {'name': country.name, 'issues': []}
+        for issue in country.issues.all():
+            print(issue)
+            country_dict['issues'].append(issue.text)
+        countries.append(country_dict)
+    info= "somethingrightnow"
+    nonsense = ''
+    for _ in range(10):
+        nonsense += choice(ascii_uppercase)
+    return JsonResponse({
+        'message': 'the json response worked',
+        'nonsense': nonsense,
+        'countries': countries
+    })
 
-
-
-
-#  do I do data.split in views +function
-
-# for issue in data.split('; '):
-#     issue = issue(text)
-#     print(type(issue))
-#     print()
-
-# class Country:
-#     def_init_(self,name, issues):
-#     self.name = name
-#     self.issues = data.split(';')
-# need to import json somewhere (views?)
-# data= json.loads() ---- ??? environmental issues or whatever the name of it is in json right?
-# print(data)
-# with open ('country.json') as f:
-    # data = json.load(f) (name guessed at this point)
-# custom management
-#
+    

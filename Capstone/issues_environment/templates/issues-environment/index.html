@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="{% static 'issues_environment/styling.css' %}">
     <title>Global Environment</title>
     <script src="https://unpkg.com/vue@next"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 </head>
 
 <body>
@@ -24,7 +25,7 @@
                 <label for='searchEntry'> Please enter environmental issue or country name (short form ie "united
                     states"):
                     <input v-model="searchEntry" type="text" id="searchEntry">
-                    <button type="submit">search</button>
+                    <button type="submit" id="enter" @click="button">search</button>
                     [[message]]
             </form>
         </div>
@@ -53,26 +54,47 @@
 
 
     </div>
+    <footer>
+        <p>
+            Created by: <tab></tab> V. Chacon for PDX Code Guild<tab>2022</tab>
+        </p>
+
+    </footer>
     <script>
         const App = {
             delimiters: ['[[', ']]'],
             data() {
                 return {
                     message: 'Testing!!!',
+                    searchEntry: '',
+                    searchResult: '',
+
                 }
             },
-                methods: {
+            created() {
+                this.getInfo()
+            },
+            methods: {
+                getInfo() {
+                    // need to use searchEntry to get data from table? 
+                    //save first then GET?
+                    // this.itemsToDo.push(this.searchEntry)
+                    // print('')}
+                    axios({
+                        method: 'get',
+                        url: '/get-info'
+                    })
+                    .then(res => {
+                        console.log(res.data)
+                        this.message = res.data.nonsense
+                    })
+                } 
+
+            },
+        }   
     
-                },
-            }    
-                Vue.createApp(App).mount('#app')
+        Vue.createApp(App).mount('#app')
     </script>
 </body>
-<footer>
-    <p>
-        Created by: <tab></tab> V. Chacon for PDX Code Guild
-    </p>
-
-</footer>
 
 </html>
