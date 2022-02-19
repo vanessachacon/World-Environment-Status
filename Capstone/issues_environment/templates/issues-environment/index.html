@@ -20,13 +20,20 @@
     <div id="app">
 
         <div>
-            <form>
+            <form @submit.prevent="getInfo">
                 {% csrf_token %}
                 <label for='searchEntry'> Please enter environmental issue or country name (short form ie "united
                     states"):
                     <input v-model="searchEntry" type="text" id="searchEntry">
-                    <button type="submit" id="enter" @click="button">search</button>
-                    [[message]]
+                    <button type="submit" id="enter" @click="getInfo">search</button>
+                    <li v-for="country in countryIssueInfo"> [[country.name]], [[country.issues]] </li>
+
+                    {% comment %} {% for country in countries %}
+                    <li> {% country.name %}, {% country.issues %}</li>
+                    {% endfor %} {% endcomment %}
+
+
+                    
             </form>
         </div>
         <div>
@@ -60,41 +67,7 @@
         </p>
 
     </footer>
-    <script>
-        const App = {
-            delimiters: ['[[', ']]'],
-            data() {
-                return {
-                    message: 'Testing!!!',
-                    searchEntry: '',
-                    searchResult: '',
-
-                }
-            },
-            created() {
-                this.getInfo()
-            },
-            methods: {
-                getInfo() {
-                    // need to use searchEntry to get data from table? 
-                    //save first then GET?
-                    // this.itemsToDo.push(this.searchEntry)
-                    // print('')}
-                    axios({
-                        method: 'get',
-                        url: '/get-info'
-                    })
-                    .then(res => {
-                        console.log(res.data)
-                        this.message = res.data.nonsense
-                    })
-                } 
-
-            },
-        }   
-    
-        Vue.createApp(App).mount('#app')
-    </script>
+    <script type="application/javascript" src="{% static 'issues_environment/script.js' %}"></script>
 </body>
 
 </html>
