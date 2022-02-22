@@ -1,5 +1,4 @@
 import django_on_heroku
-django_on_heroku.settings(locals())
 """
 Django settings for config project.
 
@@ -124,3 +123,5 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+django_on_heroku.settings(locals())
