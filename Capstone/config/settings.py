@@ -1,3 +1,5 @@
+import django_on_heroku
+django_on_heroku.settings(locals())
 """
 Django settings for config project.
 

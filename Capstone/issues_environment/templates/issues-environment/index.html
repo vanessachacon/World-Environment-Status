@@ -26,13 +26,8 @@
                     states"):
                     <input v-model="searchEntry" type="text" id="searchEntry">
                     <button type="submit" id="enter" @click="getInfo">search</button>
-                    <li v-for="country in countryIssueInfo"> [[country.name]], [[country.issues]] </li>
-
-                    {% comment %} {% for country in countries %}
-                    <li> {% country.name %}, {% country.issues %}</li>
-                    {% endfor %} {% endcomment %}
-
-
+                    <li v-for="country in countryIssueInfo"> [[Country.name]], [[Country.issues]] </li>
+                    
                     
             </form>
         </div>

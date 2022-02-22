@@ -9,7 +9,7 @@ from string import ascii_uppercase
 from random import choice
 
 def index(request):
-    print("Hello")
+
     return render(request,'issues-environment/index.html')
 
 # def get_info(request):
@@ -45,5 +45,5 @@ def country_issue_info(request):
         print(matching_countries)
         return JsonResponse({'message': 'hi'})
 
-    return render(request, 'countrys/index.html', context)
+    return render(request, '/', context)
     
