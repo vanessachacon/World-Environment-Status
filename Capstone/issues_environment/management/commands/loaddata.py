@@ -2,40 +2,28 @@
 from django.core.management.base import BaseCommand
 import json
 from issues_environment.models import Country, Issue
-import pandas as pd
 import os
 
 class Command(BaseCommand):
     def handle(self, *args, **options):
         entries = os.listdir('data/north-america')
         for entry in entries:
-        # print(entry)
+            print()
+            print('Start Country')
             with open(f'data/north-america/{entry}', 'r', encoding='utf-8') as f:
-                all_na_data = (json.load(f))
-                country_names = (all_na_data['Government']['Country name'] ['conventional short form']['text'])
-                print(country_names)
-                country, _created = Country.objects.get_or_create(name=country_names)
-                print(country)
-            if _created:
-                self.stdout.write(f'{country_names} created')
-            country.issues.add()
-            country.save()
-        us_data_filepath = 'data/north-america/us.json'
-        with open(us_data_filepath, 'r', encoding='utf-8') as f:
-            us_data = json.load(f)
-        e_data = (us_data['Environment']
-                  ['Environment - current issues']['text'])
-        env_data = (e_data.split('; '))
-        for issue_text in env_data:
-            issue, _created = Issue.objects.get_or_create(text=issue_text)
-            print(issue)
-            if _created:
-                self.stdout.write(f'{issue} created')
-            country.issues.add(issue)
+                country_data = (json.load(f))
+            country_name = (country_data['Government']['Country name'] ['conventional short form']['text'])
+            print('Country Name: ', country_name)
+            country, _created = Country.objects.get_or_create(name=country_name)
 
-#   bd_data = json.load(f)
-#             ca_data = json.load(f)
-#             gl_data = json.load(f)
-#             ip_data = json.load(f)
-#             mx_data = json.load(f)
-#             sb_data = json.load(f)
+            e_data = (country_data['Environment']['Environment - current issues']['text'])
+            env_data = (e_data.split('; '))
+            for issue_text in env_data:
+                issue, _created = Issue.objects.get_or_create(text=issue_text)
+                print(issue)
+                country.issues.add(issue)
+            country.save()
+            print('End Country')
+
+
+ 
