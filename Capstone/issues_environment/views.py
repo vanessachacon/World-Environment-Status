@@ -34,16 +34,28 @@ def index(request):
 
 
 def country_issue_info(request):
-    context = {'countries': Country.objects.all()} 
     if request.method == 'POST':
-        data = json.loads(request.body)
-        print(data)
-        term = data['term']
-        print(term)
-        matching_countries = Country.objects.filter(Q(name__icontains=term))# | Q(issues__icontains=term)) 
-        # context = {'countries': matching_countries}
-        print(matching_countries)
-        return JsonResponse({'message': 'hi'})
+        search = json.loads(request.body)
+        text = search.get('searchEntry')
+        context = {'countries': Country.objects.all()} 
+        term = search['searchEntry']
+        matching_countries = Country.objects.filter(Q(name__icontains=term)) #| Q(issues__icontains=term)
+        context = {'countries': matching_countries} # {% for country in matching_countries %}
+        # print(matching_countries)
+        countries = []
+        for country in matching_countries:
+            country_dict = {'name': country.name, 'issues': []}
+            countries.append(country_dict)
+            print(country.name)
+            print(country.issues.all())
+            for issue in country.issues.all():
+                print(issue.text)
+                country_dict['issues'].append(issue.text)
+            print()
+        # print(context)
 
-    return render(request, '/', context)
+        data = {'countries': countries}
+        
+        
+    return JsonResponse (data)
     

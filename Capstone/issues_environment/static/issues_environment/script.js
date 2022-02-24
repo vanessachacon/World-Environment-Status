@@ -7,7 +7,12 @@ const App = {
             message: 'Testing!!!',
             searchEntry: '',
             searchResult: '',
-            countryIssueInfo: [],
+            countryIssueInfo: [
+                {
+                    name: 'USA',
+                    issues: ['this', 'that', 'the other one']
+                }
+            ],
             csrfmiddlewaretoken: ''
 
         }
@@ -17,7 +22,7 @@ const App = {
     },
     mounted () { // mounted hook runs when html is loaded
         this.csrfmiddlewaretoken = document.querySelector('input[name="csrfmiddlewaretoken"]').value
-        console.log(this.csrfmiddlewaretoken)
+        // console.log(this.csrfmiddlewaretoken)
     },
     methods: {
         getInfo() {
@@ -25,15 +30,18 @@ const App = {
             axios({
                 method: 'post',
                 url: '/country_issue_info',
-                data: { searchEntry },
+                data: {'searchEntry' : this.searchEntry},
                 headers: {
                     'X-CSRFToken': this.csrfmiddlewaretoken
                 }
             })
                 .then(res => {
+                    console.log(res)
                     console.log(res.data)
-                    searchResult.push(res.data)
-                    console.log(searchResult)
+                    console.log(res.data.countries)
+                    this.countryIssueInfo = res.data.countries
+                    // this.searchResult.push(res.data)
+                    // console.log(this.searchResult)
                 })
         }
 

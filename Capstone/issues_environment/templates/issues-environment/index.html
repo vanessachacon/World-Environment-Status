@@ -26,7 +26,7 @@
                     states"):
                     <input v-model="searchEntry" type="text" id="searchEntry">
                     <button type="submit" id="enter" @click="getInfo">search</button>
-                    <li v-for="country in countryIssueInfo"> {%countryIssueInfo%}, [[Country.issues]] </li>
+                    <li v-for="country in countryIssueInfo"> [[country.name]], [[country.issues]] </li>
                     
                     
             </form>

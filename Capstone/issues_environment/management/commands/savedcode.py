@@ -24,7 +24,7 @@ class Command(BaseCommand):
                         no_name_list.append(entry)
                 except KeyError:
                     print('sorry no data available')
-                country = Country.objects.get_or_create(name=country_name)
+                country,_created = Country.objects.get_or_create(name=country_name)
 
                 try:
                     e_data = (country_data['Environment']['Environment - current issues']['text'])
@@ -35,7 +35,7 @@ class Command(BaseCommand):
                 except KeyError:
                     print('sorry no data available')
                 for issue_text in env_data:
-                    issue = Issue.objects.get_or_create(text=issue_text)
+                    issue, _created = Issue.objects.get_or_create(text=issue_text)
                     print(issue)
                     country.issues.add(issue)
                     country.save()
