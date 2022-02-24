@@ -25,7 +25,7 @@ const App = {
             axios({
                 method: 'post',
                 url: '/country_issue_info',
-                data: { this.searchEntry },
+                data: { searchEntry },
                 headers: {
                     'X-CSRFToken': this.csrfmiddlewaretoken
                 }
