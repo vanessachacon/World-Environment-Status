@@ -1,3 +1,4 @@
+{% load static%}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -22,8 +23,7 @@
         <div>
             <form @submit.prevent="getInfo">
                 {% csrf_token %}
-                <label for='searchEntry'> Please enter environmental issue or country name (short form ie "united
-                    states"):
+                <label for='searchEntry'> Please enter country name for list of environmental issues:
                     <input v-model="searchEntry" type="text" id="searchEntry">
                     <button type="submit" id="enter" @click="getInfo">search</button>
                     <li v-for="country in countryIssueInfo"> [[country.name]], [[country.issues]] </li>
@@ -32,7 +32,6 @@
             </form>
         </div>
         <div>
-            {% load static%}
             <img src="{% static 'issues_environment\worldmap.jpg' %}" alt="my image">
         </div>
 

@@ -60,6 +60,3 @@ class Command(BaseCommand):
 #                 print(issue)
 #                 country.issues.add(issue)
 #             country.save()
-            
-
- 

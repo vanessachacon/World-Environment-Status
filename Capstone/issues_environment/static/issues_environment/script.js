@@ -9,8 +9,8 @@ const App = {
             searchResult: '',
             countryIssueInfo: [
                 {
-                    name: 'USA',
-                    issues: ['this', 'that', 'the other one']
+                    name: 'example',
+                    issues: ['united states']
                 }
             ],
             csrfmiddlewaretoken: ''

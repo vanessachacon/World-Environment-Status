@@ -41,11 +41,3 @@ def country_issue_info(request):
         
     return JsonResponse (data)
     
-
-    # for (let i=0; i<countries.length; i++) {
-    # console.log(countries[i].name)
-    # if (countries[i].issues.length > 0) {
-    #     console.log('issues', issues)
-    # } else {console.log('no issues, perfect environment in this country')
-    #        }
-}

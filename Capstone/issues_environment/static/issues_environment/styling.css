@@ -4,7 +4,7 @@ header{
 }
 text{color:rgb(240, 235, 235)}
 h1{text-align:center;
-    color:rgb(235, 221, 34)}
+    color:rgb(128, 207, 118)}
 body {
     display: flex;
     flex-direction: column;
@@ -12,7 +12,8 @@ body {
     /* width: 600px; */
     margin: 0;
     min-height: 100vh;
-    background-color: #4273fa;
+    background-image: url('bluedot.jpg');
+    /* background-color #4273fa; */
     padding: 0 20px 20px 20px;
     border: 5px solid rgb(206, 218, 102);
     color: rgb(158, 9, 245)
