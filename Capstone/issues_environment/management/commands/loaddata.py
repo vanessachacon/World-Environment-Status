@@ -8,8 +8,7 @@ class Command(BaseCommand):
     def handle(self, *args, **options):
         entries = os.listdir('data/north-america')
         for entry in entries:
-            print()
-            print('Start Country')
+            
             with open(f'data/north-america/{entry}', 'r', encoding='utf-8') as f:
                 country_data = (json.load(f))
             country_name = (country_data['Government']['Country name'] ['conventional short form']['text'])
@@ -23,7 +22,6 @@ class Command(BaseCommand):
                 print(issue)
                 country.issues.add(issue)
             country.save()
-            print('End Country')
-
+            
 
  
