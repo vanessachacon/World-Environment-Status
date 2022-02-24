@@ -12,24 +12,6 @@ def index(request):
 
     return render(request,'issues-environment/index.html')
 
-# def get_info(request):
-#     countries = []
-#     for country in Country.objects.all():
-#         print(country)
-#         country_dict = {'name': country.name, 'issues': []}
-#         for issue in country.issues.all():
-#             print(issue)
-#             country_dict['issues'].append(issue.text)
-#         countries.append(country_dict)
-
-#     nonsense = ''
-#     for _ in range(10):
-#         nonsense += choice(ascii_uppercase)
-#     return JsonResponse({
-#         'message': 'the json response worked',
-#         'nonsense': nonsense,
-#         'countries': countries
-#     })
 
 
 
@@ -59,3 +41,11 @@ def country_issue_info(request):
         
     return JsonResponse (data)
     
+
+    # for (let i=0; i<countries.length; i++) {
+    # console.log(countries[i].name)
+    # if (countries[i].issues.length > 0) {
+    #     console.log('issues', issues)
+    # } else {console.log('no issues, perfect environment in this country')
+    #        }
+}
