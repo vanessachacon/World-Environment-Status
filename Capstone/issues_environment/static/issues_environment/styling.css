@@ -24,11 +24,19 @@ body {
     background-size: 600px; */
     /* background-color #4273fa; */
     padding: 0 20px 20px 20px;
-    border: 5px solid #c7dfff;
+    /* border: 5px solid #c7dfff; */
     color: rgb(160, 89, 8);
     font-size: large;
     font-family: monospace;
   }
+li {
+  display:flex;
+  flex-shrink: calc();
+}
+
+article{
+  padding-top: 20px;
+}
 div{
   display: flex;
   flex-direction: row;

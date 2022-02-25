@@ -6,7 +6,9 @@ class Country(models.Model):
         verbose_name_plural = 'Countries'
 
     name = models.CharField(max_length=50)
-    issues = models.ManyToManyField('Issue')
+    issues = models.ManyToManyField('Issue', related_name='countries') # related_name= keyword argument overrides the default
+    # the default way to get all countries related to an issue would be issue.country_set.all()
+    # with related_name='countries', you can just do issue.countries.all()
 
     def __str__(self):
         return self.name

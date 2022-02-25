@@ -21,6 +21,7 @@ def country_issue_info(request):
         text = search.get('searchEntry')
         context = {'countries': Country.objects.all()} 
         term = search['searchEntry']
+
         matching_countries = Country.objects.filter(Q(name__icontains=term)) #| Q(issues__icontains=term)
         context = {'countries': matching_countries} # {% for country in matching_countries %}
         # print(matching_countries)
@@ -34,9 +35,23 @@ def country_issue_info(request):
                 print(issue.text)
                 country_dict['issues'].append(issue.text)
             print()
-        # print(context)
 
-        data = {'countries': countries}
+        matching_issues = Issue.objects.filter(Q(text__icontains=term))
+        issues = []
+        for issue in matching_issues:
+            issue_dict = {'name': issue.text, 'countries': []}
+            issues.append(issue_dict)
+            print(issue.text)
+            # print(issue.issues.all())
+            for country in issue.countries.all():
+                print(country.name)
+                issue_dict['countries'].append(country.name)
+            print()
+        
+
+        data = {'countries': countries,
+                'issues' : issues
+                }
         
         
     return JsonResponse (data)

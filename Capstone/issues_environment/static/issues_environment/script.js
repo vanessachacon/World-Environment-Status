@@ -13,6 +13,7 @@ const App = {
                     issues: ['united states']
                 }
             ],
+            issueCountryInfo: [],
             csrfmiddlewaretoken: ''
 
         }
@@ -39,7 +40,8 @@ const App = {
                     console.log(res)
                     console.log(res.data)
                     console.log(res.data.countries)
-                    this.countryIssueInfo = res.data.countries
+                    this.countryIssueInfo = res.data.countries // the countries
+                    this.issueCountryInfo = res.data.issues // the issues
                     // this.searchResult.push(res.data)
                     // console.log(this.searchResult)
                 })

@@ -7,7 +7,7 @@ import os
 
 class Command(BaseCommand):
     def handle(self, *args, **options):
-        continents = os.listdir('data')
+        continents = os.listdir('Capstone\data')
         
         no_name_list = []
         no_env_list = []

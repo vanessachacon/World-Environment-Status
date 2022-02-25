@@ -26,7 +26,11 @@
                 <label for='searchEntry'> Please enter country name for list of environmental issues:
                     <input v-model="searchEntry" type="text" id="searchEntry">
                     <button type="submit" id="enter" @click="getInfo">search</button>
+                    <article>
+
                     <li v-for="country in countryIssueInfo"> [[country.name]], [[country.issues]] </li>
+                    <li v-for="issues in issueCountryInfo"> [[issues.countries]][[issues.name]]<br></li>
+                    <article>
                     
                     
             </form>
