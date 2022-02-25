@@ -7,12 +7,12 @@ import os
 
 class Command(BaseCommand):
     def handle(self, *args, **options):
-        continents = os.listdir('Capstone\data')
+        continents = os.listdir('Capstone/data')
         
         no_name_list = []
         no_env_list = []
         for continent in continents: # continent
-            entries = os.listdir(f'data\{continent}')
+            entries = os.listdir(f'data/{continent}')
             for entry in entries: #countries
                 try:
                     with open(f'data/{continent}/{entry}', 'r', encoding='utf-8') as f:
