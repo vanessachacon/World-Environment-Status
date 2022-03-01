@@ -14,7 +14,6 @@ def index(request):
 
 
 
-
 def country_issue_info(request):
     if request.method == 'POST':
         search = json.loads(request.body)
